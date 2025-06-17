@@ -1,0 +1,11 @@
+Auth service - 8089
+API gateway  - 8080
+Eureka svc   - 8761
+catalogue    - 8081  w
+discoung     - 8082  w 
+cart service - 8083  w
+Order svc	 - 8084  w 
+
+dashboard svc- 8085
+
+ 

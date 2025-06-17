@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/cart/**
+        - id: catalogue-service
+          uri: lb://catalogue-service
+          predicates:
+            - Path=/api/catalogue/**
+        - id: discount-service
+          uri: lb://discount-service
+          predicates:
+            - Path=/api/discount/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8080
+
+jwt:
+  secret: 12345678901234567890123456789012
